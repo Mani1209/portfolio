@@ -8,14 +8,14 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="web.css">
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=InitializeMap"></script>
 <script language="javascript" type="text/javascript">
 
     var map;
     var geocoder;
     function InitializeMap() {
 
-myCenter=new google.maps.LatLng(8.683669, 77.459373);
+ var myCenter=new google.maps.LatLng(8.683669, 77.459373);
   var myOptions= {
     center:myCenter,
     zoom:18, scrollwheel: false, draggable: false,
@@ -163,6 +163,44 @@ myCenter=new google.maps.LatLng(8.683669, 77.459373);
       <img src="/w3images/p4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Quiet ocean">
     </div>
   </div>
+  
+  <div class="w3-row-padding w3-center">
+  <figure class="snip1581"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/pr-sample4.jpg" alt="profile-sample2"/>
+  <figcaption>
+    <h3 class="title1">The</h3>
+    <h3 class="title2">Winter</h3>
+    <h3 class="title3">Collection</h3>
+  </figcaption><a href="#"></a>
+</figure>
+<figure class="snip1581"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/pr-sample13.jpg" alt="profile-sample7"/>
+  <figcaption>
+    <h3 class="title1">The</h3>
+    <h3 class="title2">Summer</h3>
+    <h3 class="title3">Collection</h3>
+  </figcaption><a href="#"></a>
+</figure>
+<figure class="snip1581"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/pr-sample9.jpg" alt="profile-sample6"/>
+  <figcaption>
+    <h3 class="title1">The</h3>
+    <h3 class="title2">Autumn</h3>
+    <h3 class="title3">Collection</h3>
+  </figcaption><a href="#"></a>
+</figure>
+</div>
+<div class="w3-row-padding w3-center">
+	<ul id="projects">
+    <li id="p1" class="flipper">
+      <div class="front"><img src="https://dribbble.s3.amazonaws.com/users/1960/screenshots/948220/icons_1x.png" alt="">
+      </div>
+     
+    </li><!--
+    --><li id="p2" class="flipper">
+      <div class="front"><img src="https://dribbble.s3.amazonaws.com/users/8868/screenshots/949182/_dribbble____024_-_itsy_theme__22minimal_22.png" alt="">
+      </div>
+    
+    </li>
+</ul>
+	</div>
 <div class="wrap">
 <div class="tile"> 
   <img id="img" src='https://images.unsplash.com/photo-1464054313797-e27fb58e90a9?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=996&q=80'/>
