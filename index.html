@@ -8,28 +8,39 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="web.css">
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWU7e-8HIBW7T1ns6mZhu-yOZO53xP-jo&callback=initMap"></script>
+
 <script language="javascript" type="text/javascript">
 
-    var map;
-    var geocoder;
-    function InitializeMap() {
 
- var myCenter=new google.maps.LatLng(8.683669, 77.459373);
-  var myOptions= {
-    center:myCenter,
-    zoom:18, scrollwheel: false, draggable: false,
-    mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-        map = new google.maps.Map(document.getElementById("map"), myOptions);
-   
-  var marker = new google.maps.Marker({
-    position: myCenter,
-    title: "maja",
-  });
-  marker.setMap(map);
-	}
-	window.onload = InitializeMap;
+  var marker;
+
+  function initMap() {
+
+      var myLatLng = {lat: 12.985734, lng: 80.246155};
+      var map = new google.maps.Map(document.getElementById('map-container'), {
+          zoom: 15,
+          scrollwheel: false,
+          center: myLatLng
+      });
+
+      marker = new google.maps.Marker({
+          map: map,
+          animation: google.maps.Animation.DROP,
+          position: myLatLng
+      });
+      marker.addListener('click', toggleBounce);
+  }
+
+  function toggleBounce() {
+      if (marker.getAnimation() !== null) {
+          marker.setAnimation(null);
+      } else {
+          marker.setAnimation(google.maps.Animation.BOUNCE);
+      }
+  }
+
 	</script>
 </head>
 <body>
@@ -53,7 +64,7 @@
                 <img src="http://astra-hc.com/images/nina.jpg">
                 <div class="info">
                     <h3>Naim Ansari</h3>
-                    
+
                 </div>
             </a>
         </div>
@@ -70,18 +81,18 @@
 
 <!-- First Parallax Image with Logo Text -->
 <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
-  
+
   	<section class="head">
 		<a href="" data-bf="10 Stunning" data-af="with scss">HOVER EFFECTS</a>
 	</section>
-    
-  
+
+
 </div>
 
 <!-- Container (About Section) -->
 
 <div class="w3-content w3-container w3-padding-64" id="about">
-	
+
   <h3 class="w3-center">ABOUT ME</h3>
   <p class="w3-center"><em>I love photography</em></p>
   <p>We have created a fictional "personal" website/blog, and our fictional character is a hobby photographer. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -163,7 +174,7 @@
       <img src="/w3images/p4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Quiet ocean">
     </div>
   </div>
-  
+
   <div class="w3-row-padding w3-center">
   <figure class="snip1581"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/pr-sample4.jpg" alt="profile-sample2"/>
   <figcaption>
@@ -189,7 +200,7 @@
 </div>
 
 <div class="wrap">
-<div class="tile"> 
+<div class="tile">
   <img id="img" src='https://images.unsplash.com/photo-1464054313797-e27fb58e90a9?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=996&q=80'/>
   <div class="text" onclick="onClick(document.getElementById('img'))">
   <h1>Lorem ipsum.</h1>
@@ -199,7 +210,7 @@
  </div>
 
 
-<div class="tile"> 
+<div class="tile">
   <img id="img02" src='https://images.unsplash.com/photo-1458668383970-8ddd3927deed?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1004&q=80'/>
   <div class="text" onclick="onClick(document.getElementById('img02'))">
   <h1>Lorem ipsum.</h1>
@@ -207,8 +218,8 @@
   <p class="animate-text">Bacon ipsum dolor amet pork belly tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank sirloin strip steak prosciutto kevin turducken. </p>
   </div>
  </div>
-  
-  <div class="tile"> 
+
+  <div class="tile">
   <img id="img03" src='https://images.unsplash.com/photo-1422393462206-207b0fbd8d6b?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1000&q=80'/>
   <div class="text" onclick="onClick(document.getElementById('img03'))">
   <h1>Lorem ipsum.</h1>
@@ -216,11 +227,11 @@
   <p class="animate-text">Bacon ipsum dolor amet pork belly tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank sirloin strip steak prosciutto kevin turducken. </p>
   </div>
  </div>
-</div> 
+</div>
 
 <div class = "tile">
 	<a href = "#" class = "column col-xs-6" id = "sepia"><img src = "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/041ba526957515.56361c211db4e.png"><p>Sepia</p></a>
-	<a href = "#" class = "column col-xs-6" id = "grayscale"><img src = "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/ff8a2426957515.56361c212331c.png"><p>Grayscale</p></a>	
+	<a href = "#" class = "column col-xs-6" id = "grayscale"><img src = "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/ff8a2426957515.56361c212331c.png"><p>Grayscale</p></a>
 </div>
 
  <div class="card">
@@ -249,11 +260,11 @@
       </a>
 
     </div>
-	
-   
+
+
   </div>
 
-		
+
 	<div class="grid">
 			<figure class="effect-lily">
 				<img id="img04" src="https://static.pexels.com/photos/3658/street-car-power-fast-large.jpg" alt="img12"/>
@@ -263,7 +274,7 @@
 						<p>Lily likes to play with crayons and pencils</p>
 					</div>
 					<a href="#">View more</a>
-				</figcaption>			
+				</figcaption>
 			</figure>
 			<figure class="effect-lily">
 				<img id="img05" src="https://static.pexels.com/photos/3658/street-car-power-fast-large.jpg" alt="img1"/>
@@ -273,11 +284,11 @@
 						<p>Lily likes to play with crayons and pencils</p>
 					</div>
 					<a href="#">View more</a>
-				</figcaption>			
+				</figcaption>
 			</figure>
 	</div>
 
- 
+
    <div class="grid">
 			<figure class="effect-oscar">
 				<img id="img06" src="https://static.pexels.com/photos/53040/pexels-photo-53040.jpeg" alt="img09"/>
@@ -285,7 +296,7 @@
 					<h2>Warm <span>Oscar</span></h2>
 					<p>Oscar is a decent man. He used to clean porches with pleasure.</p>
 					<a href="#">View more</a>
-				</figcaption>			
+				</figcaption>
 			</figure>
 			<figure class="effect-oscar">
 				<img id="img07" src="https://pixabay.com/static/uploads/photo/2015/10/12/14/57/face-984031_960_720.jpg" alt="img10"/>
@@ -293,7 +304,7 @@
 					<h2>Warm <span>Oscar</span></h2>
 					<p>Oscar is a decent man. He used to clean porches with pleasure.</p>
 					<a href="#">View more</a>
-				</figcaption>			
+				</figcaption>
 			</figure>
 	</div>
 
@@ -304,7 +315,7 @@
 					<h2>Wild <span>Romeo</span></h2>
 					<p>Romeo never knows what he wants. He seemed to be very cross about something.</p>
 					<a href="#">View more</a>
-				</figcaption>			
+				</figcaption>
 			</figure>
 			<figure class="effect-romeo">
 				<img id="img09" src="https://pixabay.com/static/uploads/photo/2016/01/19/18/13/baby-1150109_960_720.jpg" alt="img18"/>
@@ -312,11 +323,11 @@
 					<h2>Wild <span>Romeo</span></h2>
 					<p>Romeo never knows what he wants. He seemed to be very cross about something.</p>
 					<a href="#">View more</a>
-				</figcaption>			
+				</figcaption>
 			</figure>
 		</div>
-				
-		
+
+
 		 <div class="w3-row-padding w3-center w3-section">
     <div class="w3-col m3">
       <img src="/w3images/p5.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist">
@@ -370,21 +381,19 @@
   </div>
 </div>
 
+
+    <div id="map-container" class="map z-depth-1" style="padding:150px"></div>
+
+
 <!-- Container (Contact Section) -->
 <div class="w3-content w3-container w3-padding-64" id="contact">
   <h3 class="w3-center">WHERE I WORK</h3>
   <p class="w3-center"><em>I'd love your feedback!</em></p>
 
- 
-    
-      <!-- Add Google Maps -->
-    
-    <div id ="map" class="w3-round-large" style="width:100%;height:400px;" >
-</div>
     <div class="w3-col m12 w3-panel">
           <div class="w3-section">
 		  <div class="w3-col m6 w3-panel">
-      <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Kallidaikurichi</p>     
+      <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Kallidaikurichi</p>
       <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: mail@mail.com</p>
 		  </div>
 		  <div class="w3-col m6 w3-panel">
@@ -400,8 +409,8 @@
 		c-1.051,0.349-2.213,0.366-3.258-0.016c-2.844-1.037-2.789-3.765-2.736-6.3c0.003-0.178-0.292-0.231-0.32-0.045
 		c-0.396,2.602-0.057,5.487,2.642,6.657c1.106,0.479,2.366,0.529,3.523,0.209c0.891-0.247,2.405-0.872,2.651-1.863
 		C120.904,50.135,120.85,50.059,120.785,50.085z"/>
-	<polygon fill="#FFFFFF" points="92.909,50.337 92.843,53.548 95.727,51.844 95.53,55.121 98.414,53.154 98.348,56.3 
-		101.034,54.334 100.642,57.414 103.263,55.415 103.066,58.594 105.72,56.563 105.49,59.643 107.948,57.545 108.111,60.56 
+	<polygon fill="#FFFFFF" points="92.909,50.337 92.843,53.548 95.727,51.844 95.53,55.121 98.414,53.154 98.348,56.3
+		101.034,54.334 100.642,57.414 103.263,55.415 103.066,58.594 105.72,56.563 105.49,59.643 107.948,57.545 108.111,60.56
 		110.307,58.691 110.209,61.871 112.634,59.839 112.83,63.115 115.287,61.019 115.255,63.901 118.007,61.871 	"/>
 	<path fill="#FFFFFF" d="M94.285,80.088c0.066-0.263-0.852-4.85-0.852-4.653s3.047,3.244,3.047,3.244l0.164-3.112l2.622,1.802
 		l0.065-2.916l2.523,1.704l0.033-2.818l2.457,1.639l0.361-3.015l2.392,1.54l0.36-2.851l2.622,1.441l0.262-2.751l2.229,1.474
@@ -412,9 +421,9 @@
 	<ellipse fill="#C2DB6E" cx="134.127" cy="49.157" rx="1.9" ry="2.064"/>
 </g>
 
-	<animateTransform 
+	<animateTransform
 	   xlink:href="#big-fish"
-	   attributeName="transform" 
+	   attributeName="transform"
 	   attributeType="XML"
 	   type="translate"
 	   from="-20"
@@ -434,9 +443,9 @@
 	<ellipse fill="#FFFFFF" cx="37.347" cy="66.056" rx="1.892" ry="1.745"/>
 	<ellipse id="eye" cx="38.355" cy="65.859" rx="0.983" ry="0.958"/>
 </g>
-	<animateTransform 
+	<animateTransform
 	   xlink:href="#small-fish"
-	   attributeName="transform" 
+	   attributeName="transform"
 	   attributeType="XML"
 	   type="translate"
 	   from="0"
@@ -448,10 +457,10 @@
 	   repeatCount="indefinite"
 	   fill="freeze"
 	   />
-	   
-	   <animateTransform 
+
+	   <animateTransform
 	   xlink:href="#eye"
-	   attributeName="transform" 
+	   attributeName="transform"
 	   attributeType="XML"
 	   type="translate"
 	   from="-2"
@@ -465,17 +474,17 @@
 	   />
 
 </svg>
-	  
+
     </div>
-      
-   
+
+
   </div>
 </div>
 <div class="scrolltext">
     <p class="scrollpara">I'm a</p>
 <b class="scrollbold">
   <span1 class="scrollspan1">
-    web developer<br /> 
+    web developer<br />
     css cowboy<br />
     self-facilitating media node<br />
     box inside a box<br />
@@ -489,7 +498,7 @@
 			</a>
 	</div>
 	</div>
-	
+
 	<h1>
   <a href="" class="typewrite" data-period="2000" data-type='[ "Hi, Im VipulM.", "I am Creative.", "I Love Design.", "I Love to Develop." ]'>
     <span class="wrap"></span>
@@ -501,17 +510,17 @@
 <!-- Footer -->
 <footer class="w3-center w3-padding-64 w3-opacity w3-hover-opacity-off">
   <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-  
+
   <div class="social google-pluse">
             <i class="fa fa-google-plus fa-5x"></i>
         </div>
         <div class="social facebook">
-            <i class="fa fa-facebook fa-5x"></i>       
+            <i class="fa fa-facebook fa-5x"></i>
         </div>
        <div class="social linkedin">
-            <i class="fa fa-linkedin fa-5x"></i>   
+            <i class="fa fa-linkedin fa-5x"></i>
         </div>
-  
+
   <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
 </footer>
 </div>
